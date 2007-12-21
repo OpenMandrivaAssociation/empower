@@ -12,6 +12,7 @@ URL: 		http://www.satus.net/empower
 Source: 	%{name}-%{version}.tar.bz2
 BuildRequires: 	evas-devel >= 0.9.9.038, ecore-devel >= 0.9.9.038, ewl-devel >= 0.5.1.008
 Buildrequires:	etk-devel >= 0.1.0.003, etk >= 0.1.0.003
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-root
 
 %description
 A graphical sudo tool based on the Enlightenment Foundation Libraries
