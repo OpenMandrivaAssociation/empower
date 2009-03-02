@@ -1,6 +1,6 @@
 %define name empower
-%define version 0.2.0
-%define release %mkrel 2
+%define version 1.5.2
+%define release %mkrel 1
 
 Summary:	A graphical sudo tool based on the Enlightenment Foundation Libraries
 Name:		%{name}
@@ -10,8 +10,8 @@ License:	3-clause BSD
 Group:		System/Base
 URL: 		http://www.satus.net/empower
 Source: 	%{name}-%{version}.tar.bz2
-BuildRequires: 	evas-devel >= 0.9.9.038, ecore-devel >= 0.9.9.038, ewl-devel >= 0.5.1.008
-Buildrequires:	etk-devel >= 0.1.0.003, etk >= 0.1.0.003
+BuildRequires: 	evas-devel >= 0.9.9.050, ecore-devel >= 0.9.9.050, ewl-devel >= 0.5.3.050
+Buildrequires:	etk-devel >= 0.1.0.042, etk >= 0.1.0.042
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-root
 
 %description
