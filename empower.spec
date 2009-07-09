@@ -1,6 +1,6 @@
 %define name empower
 %define version 1.5.2
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	A graphical sudo tool based on the Enlightenment Foundation Libraries
 Name:		%{name}
