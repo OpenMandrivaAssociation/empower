@@ -1,36 +1,48 @@
-%define name empower
-%define version 1.5.2
-%define release %mkrel 4
+#Tarball of svn snapshot created as follows...
+#Cut and paste in a shell after removing initial #
+
+#svn co http://svn.enlightenment.org/svn/e/trunk/empower empower; \
+#cd empower; \
+#SVNREV=$(LANGUAGE=C svn info | grep "Last Changed Rev:" | cut -d: -f 2 | sed "s@ @@"); \
+#VERSION=$(cat configure.ac | grep "empower" | grep INIT | sed 's@\[@@g' | sed 's@\]@@g' | sed 's@)@@g' | cut -d, -f 2 | sed "s@ @@"); \
+#PKG_VERSION=$VERSION.$SVNREV; \
+#cd ..; \
+#tar -Jcf empower-$PKG_VERSION.tar.xz empower/ --exclude .svn --exclude .*ignore
+
+%define svnrev	65608
 
 Summary:	A graphical sudo tool based on the Enlightenment Foundation Libraries
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		empower
+Version:	2.0.0
+Release:	0.%{svnrev}.1
 License:	3-clause BSD
 Group:		System/Base
-URL: 		http://www.satus.net/empower
-Source: 	%{name}-%{version}.tar.bz2
-BuildRequires: 	ecore-devel >= 0.9.9.050, ewl-devel >= 0.5.3.050
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-root
+URL: 		http://enlightenment.org
+Source0: 	%{name}-%{version}.%{svnrev}.tar.xz
+
+BuildRequires: 	gettext-devel
+BuildRequires: 	pkgconfig(edje)
+BuildRequires: 	pkgconfig(elementary)
 
 %description
 A graphical sudo tool based on the Enlightenment Foundation Libraries
 
 %prep
-%setup -q
+%setup -qn %{name}
 
 %build
-%configure2_5x --enable-ewl
+NOCONFIGURE=yes ./autogen.sh
+%configure2_5x 
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf $RPM_BUILD_ROOT
+%find_lang %{name}
 
-%files
-%defattr(-, root, root)
+%files -f %{name}.lang
 %doc AUTHORS ChangeLog COPYING README
 %{_bindir}/*
+%{_datadir}/%{name}/data/*.png
+
