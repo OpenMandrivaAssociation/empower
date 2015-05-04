@@ -1,20 +1,9 @@
-#Tarball of svn snapshot created as follows...
-#Cut and paste in a shell after removing initial #
-
-#svn co http://svn.enlightenment.org/svn/e/trunk/empower empower; \
-#cd empower; \
-#SVNREV=$(LANGUAGE=C svn info | grep "Last Changed Rev:" | cut -d: -f 2 | sed "s@ @@"); \
-#VERSION=$(cat configure.ac | grep "empower" | grep INIT | sed 's@\[@@g' | sed 's@\]@@g' | sed 's@)@@g' | cut -d, -f 2 | sed "s@ @@"); \
-#PKG_VERSION=$VERSION.$SVNREV; \
-#cd ..; \
-#tar -Jcf empower-$PKG_VERSION.tar.xz empower/ --exclude .svn --exclude .*ignore
-
 %define gitdate	20150504
 
 Summary:	A graphical sudo tool based on the Enlightenment Foundation Libraries
 Name:		empower
 Version:	2.0.999
-Release:	0.%{gitdate}.1
+Release:	0.%{gitdate}.2
 License:	3-clause BSD
 Group:		System/Base
 URL: 		http://enlightenment.org
@@ -29,7 +18,7 @@ BuildRequires:	pkgconfig(eweather)
 A graphical sudo tool based on the Enlightenment Foundation Libraries
 
 %prep
-%setup -qn %{name}
+%setup -qn %{name}-%{version}.%{gitdate}
 
 %build
 NOCONFIGURE=yes ./autogen.sh
