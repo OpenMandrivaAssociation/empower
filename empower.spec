@@ -9,21 +9,22 @@
 #cd ..; \
 #tar -Jcf empower-$PKG_VERSION.tar.xz empower/ --exclude .svn --exclude .*ignore
 
-%define svnrev	76628
+%define gitdate 20150504
 
 Summary:	A graphical sudo tool based on the Enlightenment Foundation Libraries
 Name:		empower
 Version:	2.0.999
-Release:	0.%{svnrev}.1
+Release:	0.%{gitdate}.1
 License:	3-clause BSD
 Group:		System/Base
 URL: 		http://enlightenment.org
-Source0: 	%{name}-%{version}.%{svnrev}.tar.xz
+Source0: 	%{name}-%{version}.%{gitdate}.tar.xz
 
 BuildRequires: 	gettext-devel
 BuildRequires: 	pkgconfig(edje)
 BuildRequires: 	pkgconfig(elementary)
 BuildRequires:	pkgconfig(eweather)
+BuildRequires:	pkgconfig(e_dbus)
 
 %description
 A graphical sudo tool based on the Enlightenment Foundation Libraries
