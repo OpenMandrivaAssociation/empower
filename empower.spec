@@ -22,6 +22,7 @@ Source0: 	%{name}-%{version}.%{gitdate}.tar.xz
 
 BuildRequires: 	gettext-devel
 BuildRequires: 	pkgconfig(edje)
+BuildRequires:	pkgconfig(efl)
 BuildRequires: 	pkgconfig(elementary)
 BuildRequires:	pkgconfig(eweather)
 BuildRequires:	pkgconfig(e_dbus)
