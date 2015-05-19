@@ -14,7 +14,7 @@
 Summary:	A graphical sudo tool based on the Enlightenment Foundation Libraries
 Name:		empower
 Version:	2.0.999
-Release:	0.%{gitdate}.1
+Release:	1.%{gitdate}.1
 License:	3-clause BSD
 Group:		System/Base
 URL: 		http://enlightenment.org
@@ -23,13 +23,15 @@ Source0: 	%{name}-%{version}.%{gitdate}.tar.gz
 BuildRequires: 	gettext-devel
 BuildRequires: 	pkgconfig(edje)
 BuildRequires: 	pkgconfig(elementary)
+BuildRequires:	pkgconfig(efl)
 BuildRequires:	pkgconfig(eweather)
+BuildRequires:	pkgconfig(e_dbus)
 
 %description
 A graphical sudo tool based on the Enlightenment Foundation Libraries
 
 %prep
-%setup -qn %{name}
+%setup -qn %{name}-%{version}.%{gitdate}
 
 %build
 NOCONFIGURE=yes ./autogen.sh
