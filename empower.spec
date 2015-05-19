@@ -25,13 +25,13 @@ BuildRequires: 	pkgconfig(edje)
 BuildRequires:	pkgconfig(efl)
 BuildRequires: 	pkgconfig(elementary)
 BuildRequires:	pkgconfig(eweather)
-BuildRequires:	pkgconfig(e_dbus)
+BuildRequires:	pkgconfig(edbus)
 
 %description
 A graphical sudo tool based on the Enlightenment Foundation Libraries
 
 %prep
-%setup -qn %{name}
+%setup -qn %{name}-%{gitdate}
 
 %build
 NOCONFIGURE=yes ./autogen.sh
