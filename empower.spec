@@ -17,7 +17,7 @@ Version:	2.0.999
 Release:	1.%{gitdate}.1
 License:	3-clause BSD
 Group:		System/Base
-URL: 		http://enlightenment.org
+URL: 		https://enlightenment.org
 Source0: 	%{name}-%{version}.%{gitdate}.tar.gz
 
 BuildRequires: 	gettext-devel
