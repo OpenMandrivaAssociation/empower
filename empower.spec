@@ -20,6 +20,11 @@ Group:		System/Base
 URL: 		https://enlightenment.org
 Source0: 	%{name}-%{version}.%{gitdate}.tar.gz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: 	gettext-devel
 BuildRequires: 	pkgconfig(edje)
 BuildRequires: 	pkgconfig(elementary)
